@@ -24,7 +24,7 @@ def save_input(day, data, directory="input"):
     print(f"Saved input for day {day} to {filepath}")
 
 def main():
-    session_cookie = "53616c7465645f5fccd4f85e38da2220856d4ff6f70bd0a74bfc8906f985bc1b877ee55dfebef617e79d72b455a617691c3d20bac54ec84d47ba0adff9eee9dc"  # Replace with your session cookie from the browser
+    session_cookie = "SESSION_COOKIE"  # Replace with your session cookie from the browser
     
     for day in range(1, 26):  # Advent of Code has 25 days of challenges
         data = fetch_input(day, session_cookie)

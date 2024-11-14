@@ -33,7 +33,7 @@ def top_three_sum(elves):
 
 def part_a():
     filename = 'sample.txt'
-    filename = '../input/day1.txt'
+    filename = '../inputs/day1.txt'
     lines = read_file(filename)
     sums = calculate_elf_loads(lines)
     largest_sum = find_largest_group_sum(sums)
@@ -41,7 +41,7 @@ def part_a():
 
 def part_b():
     # filename = 'sample.txt'
-    filename = '../input/day1.txt'
+    filename = '../inputs/day1.txt'
     lines = read_file(filename)
     elves = calculate_elf_loads(lines)
     top_three = top_three_sum(elves)
