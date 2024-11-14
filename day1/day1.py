@@ -4,7 +4,7 @@ def read_file(filename):
         lines = file.readlines()
     return lines
 
-def group_sums(lines):
+def calculate_elf_loads(lines):
     """Calculates the sum of each group of lines, separated by blank lines."""
     elves = []
     elf_load = 0
@@ -22,18 +22,34 @@ def group_sums(lines):
         elves.append(elf_load)
     return elves
 
-def find_largest_group_sum(sums):
+def find_largest_group_sum(elves):
     """Finds and returns the largest sum from the list of group sums."""
-    return max(sums) if sums else 0
+    return max(elves) if elves else 0
 
-def main():
+def top_three_sum(elves):
+    """Return the sum of the largest 3 in the list"""
+    elves.sort(reverse=True)
+    return sum(elves[:3])
+
+def part_a():
     filename = 'sample.txt'
     filename = '../input/day1.txt'
     lines = read_file(filename)
-    sums = group_sums(lines)
+    sums = calculate_elf_loads(lines)
     largest_sum = find_largest_group_sum(sums)
     print(f"The total calories of the largest load is: {largest_sum}")
 
-# Run the script
+def part_b():
+    # filename = 'sample.txt'
+    filename = '../input/day1.txt'
+    lines = read_file(filename)
+    elves = calculate_elf_loads(lines)
+    top_three = top_three_sum(elves)
+    print(f"The total calories of the largest 3 loads is: {top_three}")
+
+def main():
+    part_a()
+    part_b()
+
 if __name__ == "__main__":
     main()
